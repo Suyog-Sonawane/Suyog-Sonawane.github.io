@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suyog Sonawane — Backend Developer</title>
+<meta name="description" content="Suyog Sonawane — Java / Spring Boot backend developer. Portfolio, projects and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- floating aurora blobs (fixed backdrop) -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob blob-a"></span>
+  <span class="blob blob-b"></span>
+  <span class="blob blob-c"></span>
+</div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#top" class="brand"><span class="brand-dot"></span>Suyog<span class="grad-text">.</span></a>
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="resume-btn" href="mailto:suyogsonawane555@gmail.com">Let's talk</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap" id="hero">
+    <div class="hero-left">
+      <p class="badge reveal">
+        <span class="pulse-dot"></span> Available for opportunities
+      </p>
+
+      <h1 class="hero-title reveal">
+        Hi, I'm <span class="grad-text">Suyog</span><br>
+        I build backend <span class="underline-swipe">systems</span> that hold up.
+      </h1>
+
+      <p class="hero-role mono reveal">
+        <span id="typedText"></span><span class="cursor">|</span>
+      </p>
+
+      <p class="hero-desc reveal">
+        Java &amp; Spring Boot developer crafting reliable REST APIs, clean data
+        models and end-to-end applications — currently completing my Master's in
+        Information Technology while shipping real, working software.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">
+          <span>View my work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://github.com/Suyog-Sonawane" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Full‑stack projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num-text">MCA</span>
+          <span class="stat-label">In progress, 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right reveal">
+      <div class="photo-orbit">
+        <div class="photo-glow"></div>
+        <div class="photo-card">
+          <img src="assets/profile.jpg" alt="Portrait of Suyog Sonawane" class="photo">
+        </div>
+        <div class="float-chip chip-1 mono">☕ Java</div>
+        <div class="float-chip chip-2 mono">🌱 Spring Boot</div>
+        <div class="float-chip chip-3 mono">🗄️ MySQL</div>
+        <div class="float-chip chip-4 mono">🗄️ HTML</div>
+        <div class="float-chip chip-5 mono">🗄️ CSS</div>
+        <div class="float-chip chip-6 mono">🗄️ JavaScript</div>
+        <div class="float-chip chip-7 mono">🗄️ Web</div>
+        <div class="float-chip chip-8 mono">🗄️ Git/GitHub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">About Me</p>
+      <h2 class="section-title reveal">What drives the work</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm working toward becoming a well-rounded backend engineer — someone
+            who can be handed a hard problem and trusted to design the data model,
+            wire up the services, and ship something dependable.
+          </p>
+          <p>
+            My comfort zone spans Core &amp; Advanced Java, Spring IoC, Spring Boot
+            and Spring MVC, along with Hibernate mapping and caching. I've built
+            REST API services end-to-end and I'm confident working with
+            Collections, exception handling, and MySQL-backed persistence.
+          </p>
+          <p>
+            I'm looking for a team that will push me to grow while I contribute
+            real, measurable value back.
+          </p>
+        </div>
+
+        <div class="about-cards reveal">
+          <div class="glass-card">
+            <div class="card-icon">🎯</div>
+            <h3>Focused</h3>
+            <p>Deep in the Java/Spring ecosystem — not spreading thin.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">🧩</div>
+            <h3>End-to-end</h3>
+            <p>Comfortable owning a feature from schema to shipped UI.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">📈</div>
+            <h3>Growing</h3>
+            <p>Actively completing my Master's while building real apps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="wrap">
+      <p class="eyebrow reveal">Skills</p>
+      <h2 class="section-title reveal">Tools I reach for</h2>
+
+      <div class="skills-grid">
+        <div class="skill-col reveal">
+          <h3 class="skill-col-title mono">Core &amp; Language</h3>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Java (Core &amp; Advanced)</span><span class="pct">92%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Collections &amp; Exception Handling</span><span class="pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>OOP (String / Object Class)</span><span class="pct">90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-col reveal">
+          <h3 class="skill-col-title mono">Frameworks</h3>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Spring Boot / MVC / IoC</span><span class="pct">85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Hibernate (Mapping &amp; Cache)</span><span class="pct">80%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>REST API / Web Services</span><span class="pct">88%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-col reveal">
+          <h3 class="skill-col-title mono">Data &amp; Frontend</h3>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>MySQL / SQLite</span><span class="pct">85%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>HTML / CSS / JavaScript</span><span class="pct">78%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Python (Django)</span><span class="pct">70%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="skill-note mono reveal">// self-rated proficiency — always improving</p>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <p class="eyebrow reveal">Projects</p>
+      <h2 class="section-title reveal">Things I've built</h2>
+
+      <div class="projects-list">
+
+        <article class="tilt-card reveal">
+          <div class="tilt-card-inner">
+            <div class="project-top">
+              <span class="project-emoji">🏦</span>
+              <span class="project-status">Deployed</span>
+            </div>
+            <h3>Happy‑To‑Help Finance</h3>
+            <p class="project-sub">Home Loan Portal</p>
+            <p class="project-desc">
+              A full home-loan lifecycle platform: customer registration, document
+              upload, admin review/sanction/disbursement workflow, automated EMI
+              schedules, a running loan ledger, and PDF letters sent by email.
+            </p>
+            <ul class="project-points">
+              <li>Session-based auth with role-based Customer / Admin dashboards</li>
+              <li>Automated EMI schedule, receipts &amp; outstanding-balance ledger</li>
+              <li>PDF generation (OpenPDF) + Gmail SMTP notifications</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Java 17</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Thymeleaf</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Chart.js</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tilt-card reveal">
+          <div class="tilt-card-inner">
+            <div class="project-top">
+              <span class="project-emoji">💬</span>
+              <span class="project-status">Deployed</span>
+            </div>
+            <h3>Smart‑Chat Assistant</h3>
+            <p class="project-sub">Rule-based Chat-Bot</p>
+            <p class="project-desc">
+              A lightweight chat-bot with secure user accounts and persisted,
+              per-user chat history — built to handle repetitive enquiries
+              (admissions, schedules, fees) without human effort.
+            </p>
+            <ul class="project-points">
+              <li>Registration/login with isolated chat history per account</li>
+              <li>Rule-based reply engine with fuzzy matching &amp; dynamic replies</li>
+              <li>Clean chat UI that resumes previous conversations on login</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section section-alt" id="education">
+    <div class="wrap">
+      <p class="eyebrow reveal">Education</p>
+      <h2 class="section-title reveal">Academic record</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <span class="timeline-date mono">present</span>
+            <h3>Master's Degree, Information Technology</h3>
+            <p class="timeline-org">Dr. Moonje Institute of Management &amp; Computer Studies</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <span class="timeline-date mono">Jul 2017 – Apr 2020</span>
+            <h3>Bachelor's Degree, Computer Application</h3>
+            <p class="timeline-org">Savitribai Phule Pune University</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="contact-box glass-card reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's build something reliable</h2>
+        <p class="contact-desc">
+          Open to backend / full-stack roles and freelance work. Reach out — I reply quickly.
+        </p>
+
+        <div class="contact-grid">
+          <a href="mailto:suyogsonawane555@gmail.com" class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-label mono">Email</span>
+            <span class="contact-value">suyogsonawane555@gmail.com</span>
+          </a>
+          <a href="tel:+919359380704" class="contact-card">
+            <span class="contact-icon">📞</span>
+            <span class="contact-label mono">Phone</span>
+            <span class="contact-value">+91 93593 80704</span>
+          </a>
+          <a href="https://github.com/Suyog-Sonawane" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-icon">💻</span>
+            <span class="contact-label mono">GitHub</span>
+            <span class="contact-value">Suyog-Sonawane</span>
+          </a>
+          <a href="https://www.linkedin.com/in/suyog-s-sonawane" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-icon">🔗</span>
+            <span class="contact-label mono">LinkedIn</span>
+            <span class="contact-value">suyog-s-sonawane</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span class="mono">© <span id="year"></span> Suyog Sonawane</span>
+    <span class="mono dim">Built with HTML · CSS · JS</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
