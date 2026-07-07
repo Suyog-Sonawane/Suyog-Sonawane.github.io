@@ -24,56 +24,13 @@ nav.querySelectorAll('a').forEach(link => {
 });
 
 // ============================================
-// Typing effect (hero role line)
-// ============================================
-const typedTextEl = document.getElementById('typedText');
-const phrases = [
-  'Backend Developer — Java & Spring Boot',
-  'Building REST APIs that scale',
-  'Master\'s student, MCA — 2026'
-];
-
-function typeLoop() {
-  if (reduceMotion || !typedTextEl) {
-    if (typedTextEl) typedTextEl.textContent = phrases[0];
-    return;
-  }
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-
-  function tick() {
-    const current = phrases[phraseIndex];
-    if (!deleting) {
-      typedTextEl.textContent = current.slice(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) {
-        deleting = true;
-        setTimeout(tick, 1800);
-        return;
-      }
-    } else {
-      typedTextEl.textContent = current.slice(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        deleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-    }
-    setTimeout(tick, deleting ? 28 : 55);
-  }
-  tick();
-}
-typeLoop();
-
-// ============================================
 // Animated stat counters
 // ============================================
 function animateCounter(el) {
   const target = parseInt(el.getAttribute('data-count'), 10);
   if (reduceMotion) { el.textContent = target; return; }
   let current = 0;
-  const duration = 1200;
+  const duration = 900;
   const stepTime = 16;
   const steps = duration / stepTime;
   const increment = target / steps;
@@ -90,7 +47,7 @@ function animateCounter(el) {
 }
 
 // ============================================
-// Scroll reveal + trigger counters/skill-bars when visible
+// Scroll reveal (fade-up only, no gimmicks)
 // ============================================
 const revealTargets = document.querySelectorAll('.reveal');
 
@@ -99,49 +56,33 @@ if ('IntersectionObserver' in window) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in');
-
-        // trigger counters inside hero stats
         entry.target.querySelectorAll('.stat-num').forEach(animateCounter);
-
-        // trigger skill bar fills
-        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-          const w = bar.getAttribute('data-width');
-          requestAnimationFrame(() => { bar.style.width = w + '%'; });
-        });
-
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   revealTargets.forEach(el => observer.observe(el));
+
+  // hero stats strip isn't inside a .reveal ancestor with stat-num query working
+  // above, so also observe it directly in case markup nesting differs
+  document.querySelectorAll('.stat-num').forEach(el => {
+    if (!el.closest('.reveal')) {
+      const parentObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            parentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      parentObserver.observe(el);
+    }
+  });
 } else {
   revealTargets.forEach(el => {
     el.classList.add('in');
     el.querySelectorAll('.stat-num').forEach(el2 => el2.textContent = el2.getAttribute('data-count'));
-    el.querySelectorAll('.skill-bar-fill').forEach(bar => bar.style.width = bar.getAttribute('data-width') + '%');
-  });
-}
-
-// ============================================
-// Tilt effect on project cards
-// ============================================
-if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-  document.querySelectorAll('.tilt-card').forEach(card => {
-    const inner = card.querySelector('.tilt-card-inner');
-
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateX = ((y / rect.height) - 0.5) * -8;
-      const rotateY = ((x / rect.width) - 0.5) * 8;
-      inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      inner.style.transform = 'rotateX(0) rotateY(0)';
-    });
   });
 }
 
@@ -158,7 +99,7 @@ if ('IntersectionObserver' in window) {
       if (!link) return;
       if (entry.isIntersecting) {
         navLinks.forEach(l => l.style.color = '');
-        link.style.color = 'var(--cyan)';
+        link.style.color = 'var(--accent)';
       }
     });
   }, { threshold: 0.4 });
